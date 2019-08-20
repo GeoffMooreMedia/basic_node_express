@@ -12,9 +12,6 @@ var app = express();
 console.log('Hello World');
 
 /** 2) A first working Express Server */
-app.get('/',(req,res)=>{
-    res.send('Hello Express');
-});
 
 /** 3) Serve an HTML file */
 app.get('/',(req,res)=>{
@@ -27,7 +24,9 @@ app.use(() =>{
 });
 
 /** 5) serve JSON on a specific route */
-
+app.get('/json',(req,res)=>{
+  res.json({'message':'Hello json'})
+});
 
 /** 6) Use the .env file to configure the app */
  
