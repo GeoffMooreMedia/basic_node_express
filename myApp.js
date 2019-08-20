@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 // --> 7)  Mount the Logger middleware here
-app.get((req,res,next)=>{
+app.get('*',(req,res,next)=>{
   console.log(`${req.method} ${req.path} - ${req.ip}`);
   next();//call the next step in the chain
 });
