@@ -19,7 +19,7 @@ app.get('/',(req,res)=>{
 });
 
 /** 4) Serve static assets  */
-app.use(() =>{
+app.use('/',() =>{
     express.static(__dirname + '/public');
 });
 
