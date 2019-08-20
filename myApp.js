@@ -21,6 +21,7 @@ app.get('/',(req,res)=>{
 /** 4) Serve static assets  */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 app.use('/',() =>{
     express.static(__dirname + '/public');
 });
@@ -42,6 +43,17 @@ app.use(express.static(__dirname + '/public'));
 app.get('/json',(req,res)=>{
   res.json({'message':'Hello json'});
 >>>>>>> lesson5
+=======
+app.use(express.static(__dirname + '/public'));
+
+/** 5) serve JSON on a specific route */
+app.get('/json',(req,res)=>{
+  let responseJson = {'message':'Hello json'};
+  if(process.env.MESSAGE_STYLE === 'uppercase'){
+    responseJson.message = responseJson.message.toUpperCase();
+  }
+  res.json(responseJson);
+>>>>>>> lesson6
 });
 
 /** 6) Use the .env file to configure the app */
