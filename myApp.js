@@ -25,7 +25,11 @@ app.use(() =>{
 
 /** 5) serve JSON on a specific route */
 app.get('/json',(req,res)=>{
-  res.json({'message':'Hello json'});
+  let responseObj = {'message':'Hello json'};
+  if(process.env.MESSAGE_STYLE === 'uppercase'){
+    responseObj.message = responseObj.message.toUppercase();
+  }
+  res.json(responseObj);
 });
 
 /** 6) Use the .env file to configure the app */
